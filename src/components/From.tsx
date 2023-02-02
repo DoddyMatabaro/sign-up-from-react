@@ -1,10 +1,10 @@
 import React, { useRef, useState } from 'react'
+import { ContactEmergency } from '@mui/icons-material'
 
 function From() {
     const [focus, setFocus] = useState(false);
-
     const parentInput = useRef<HTMLDivElement>(null);
-
+    
     if(parentInput.current){
         parentInput.current.parentElement?.classList.add("border", "border-sky-700");
     }
@@ -23,7 +23,7 @@ function From() {
                 </label>
                     <div ref={parentInput} className='flex flex-row items-center justify-evenly outline-none max-w-full outline-none text-[12px]'>
                         <input type="text" className='outline-none mx-r-2 px-2  bg-transparent text-gray-100 ' onClick={()=>setFocus(!focus)} placeholder='First name'  />
-                        <span className='absolute insert-y-0 right-0 flex items-center pr-2 h5 w-5'>Icon</span>
+                        <ContactEmergency className='text-gray-900' sx={{fontSize:14}}/>
                     </div>
             </div>
             <button>Change method</button>
